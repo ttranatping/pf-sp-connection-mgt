@@ -1,21 +1,5 @@
 {
   "search-replace":[
-    {
-      "search": "dc=data-holder,dc=com",
-      "replace": "${USER_BASE_DN}",
-      "apply-env-file": false
-    },
-    {
-      "search": "data-holder.local",
-      "replace": "${BASE_HOSTNAME}",
-      "apply-env-file": false
-    }
-  ],
-  "remove-config":[
-  	{
-  	  "key": "id",
-	  "value": "ProvisionerDS"
-  	}
   ],
   "expose-parameters":[
     {
