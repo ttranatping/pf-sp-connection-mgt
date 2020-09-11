@@ -19,6 +19,9 @@ then
     then
       curl -X POST --basic -u Administrator:2FederateM0re --header 'Content-Type: application/json' --header 'X-XSRF-Header: PingFederate' https://localhost:9999/pf-admin-api/v1/cluster/replicate --insecure
     fi
+
+    cp /opt/staging/connection-deployer/${ENVIRONMENT}/* ./opt/out/instance/server/default/data/connection-deployer/
+
     test ${?} -ne 0 && kill 1
 fi
 

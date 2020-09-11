@@ -10,6 +10,7 @@ services:
       - SERVER_PROFILE_PATH=server_profiles/pingfederate
     env_file:
       - ~/.pingidentity/devops
+      - common.env
       - pf.env
     ports:
       - 9031:9031

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<md:EntityDescriptor entityID="httpbin.org" urn:name="httpbin.org" urn:LogLevel="STANDARD" urn:isActive="true" xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:urn="urn:sourceid.org:saml2:metadata-extension:v2">
+  <md:Extensions>
+    <urn:EntityExtension PFVersion="10.1.0.8" LicenseGroup="">
+      <urn:DigitialSignatureAliases SigningAlgorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256" includeX509inXmlSig="false" includeRawKeyInXmlSig="false"/>
+      <urn:Encryption>
+        <urn:EncryptionPolicy EncryptionAlgorithm="http://www.w3.org/2001/04/xmlenc#aes128-cbc" KeyTransportAlgorithm="http://www.w3.org/2001/04/xmlenc#rsa-oaep-mgf1p" EncryptAssertion="false" EncryptSubjectNameID="false" SLOEncryptSubjectNameID="false"/>
+        <urn:DecryptionPolicy AssertionEncrypted="false" SubjectNameIDEncrypted="false" AttributeEncrypted="false" SLOSubjectNameIDEncrypted="false"/>
+      </urn:Encryption>
+      <urn:Dependencies>
+        <urn:SigningKeyPairReference MD5Fingerprint="5357ac62f9d27cb0e677f974d27ba9d3"/>
+        <urn:DsigVerificationCert/>
+        <urn:SecondaryDsigVerificationCert/>
+        <urn:DecryptionKeyPairReference/>
+        <urn:SecondaryDecryptionKeyPairReference/>
+        <urn:EncryptionCert/>
+        <urn:SoapAuth>
+          <soap:Incoming xmlns:soap="http://www.sourceid.org/2004/04/soapauth"/>
+          <soap:Outgoing xmlns:soap="http://www.sourceid.org/2004/04/soapauth"/>
+        </urn:SoapAuth>
+      </urn:Dependencies>
+      <urn:ConnectionTemplateProperties/>
+      <urn:MetadataUrlId xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+      <urn:enableAutoMetadataUpdate>false</urn:enableAutoMetadataUpdate>
+      <urn:AdditionalAllowedEntitiesConfiguration>
+        <urn:AllowAdditionalEntities>false</urn:AllowAdditionalEntities>
+        <urn:AllowAllEntities>false</urn:AllowAllEntities>
+        <urn:AdditionalAllowedEntities/>
+      </urn:AdditionalAllowedEntitiesConfiguration>
+    </urn:EntityExtension>
+  </md:Extensions>
+  <md:SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" AuthnRequestsSigned="false" WantAssertionsSigned="false" SignResponseAsRequired="true">
+    <md:Extensions>
+      <urn:RoleExtension ArtifactTimeoutSeconds="60">
+        <urn:IncomingBindings Artifact="true" POST="true" Redirect="true" SOAP="true"/>
+        <urn:EnabledProfiles IDPInitiatedSSO="true" IDPInitiatedSLO="false" SPInitiatedSSO="false" SPInitiatedSLO="false"/>
+        <urn:SP AssertionValidityAfterMinutes="5" AssertionValidityBeforeMinutes="5" ConnectionTargetType="Standard" EnableCDCDuringSSO="false">
+          <urn:C2cContractToAssertionMapping AbortIfNotFoundInAnyDataSources="false" RestrictVirtualServerIds="false" C2cContractId="HJIsb3gljzzYLq9I" C2cContractName="defaultContract">
+            <urn:DefaultAttributeMapping>
+              <urn:AttributeMap Name="SAML_SUBJECT" Type="Authentication Policy Contract" Value="subject"/>
+              <urn:TokenAuthorizationIssuanceCriteria/>
+            </urn:DefaultAttributeMapping>
+          </urn:C2cContractToAssertionMapping>
+          <urn:NameIdentifierMappingType IncludeAdditionalAttributes="false" IncludeAdditionalTransientAttributes="false"/>
+        </urn:SP>
+      </urn:RoleExtension>
+    </md:Extensions>
+    <md:NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified</md:NameIDFormat>
+    <md:AssertionConsumerService index="0" Location="https://httpbin.org/post" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" isDefault="true"/>
+  </md:SPSSODescriptor>
+  <md:RoleDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol" xsi:type="urn:PFAvailableCertsRoleDescriptorType" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/>
+  <md:ContactPerson contactType="administrative"/>
+</md:EntityDescriptor>
