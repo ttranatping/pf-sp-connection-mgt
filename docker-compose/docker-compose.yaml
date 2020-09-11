@@ -1,0 +1,24 @@
+version: "3.1"
+
+services:
+  pingfederate:
+    image: pingidentity/pingfederate:edge
+    command: entrypoint.sh start-server
+    environment:
+      - SERVER_PROFILE_URL=https://github.com/ttranatping/pf-sp-connection-mgt.git
+      - SERVER_PROFILE_BRANCH=master
+      - SERVER_PROFILE_PATH=server_profiles/pingfederate
+    env_file:
+      - ~/.pingidentity/devops
+      - pf.env
+    ports:
+      - 9031:9031
+      - 443:9031
+      - 9999:9999
+    networks:
+      - pingnet-dmz
+      - pingnet-internal
+
+networks:
+    pingnet-internal:
+    pingnet-dmz:

@@ -1,0 +1,42 @@
+kind: Kustomization
+apiVersion: kustomize.config.k8s.io/v1beta1
+
+resources:
+- ../01-standalone/pingfederate-cluster
+
+# The only difference in standalone deployments vs "fullstack" (integrated) is the product configurations.
+# here we replace standalone server-profiles ("getting-started") with "baseline" for each product
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: pingfederate-admin-environment-variables
+  behavior: replace
+  envs:
+    - devops
+    - pf.env
+    - env_vars.common
+    - env_vars.pingfederate-admin
+- name: pingfederate-engine-environment-variables
+  behavior: replace
+  envs:
+    - devops
+    - env_vars.common
+    - env_vars.pingfederate-engine
+
+patches:
+- target:
+    kind: Deployment
+    name: ^pingfederate$
+  patch: |-
+    - op: replace
+      path: /spec/replicas
+      value: 1
+- target:
+    kind: Deployment
+    name: ^pingfederate$
+  patch: |-
+    - op: replace
+      path: /spec/template/spec/containers/0/image
+      value: pingidentity/pingfederate:edge
