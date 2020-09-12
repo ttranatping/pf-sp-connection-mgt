@@ -1,0 +1,1 @@
+*/15 * * * * /opt/staging/hooks/update-connections.sh >> /var/log/update-connections.log
