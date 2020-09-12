@@ -1,0 +1,16 @@
+*.DS_Store
+*.subst_*
+*.bak
+*backup*
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/target
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/target/*
+k8/02-completeinstall/devops
+scripts/ping-bulkconfigtools/out
+scripts/ping-bulkconfigtools/out/*
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/.classpath
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/.project
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/.settings
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/.settings/*
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/in/pa-export.json
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/in/out-pa-bulk-config.json
+scripts/ping-bulkconfigtools/ping-bulkexport-tools-project/in/out-pa-env.properties
