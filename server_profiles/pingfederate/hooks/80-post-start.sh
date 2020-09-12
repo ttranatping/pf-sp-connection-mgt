@@ -20,8 +20,6 @@ then
       curl -X POST --basic -u Administrator:2FederateM0re --header 'Content-Type: application/json' --header 'X-XSRF-Header: PingFederate' https://localhost:9999/pf-admin-api/v1/cluster/replicate --insecure
     fi
 
-    ${HOOKS_DIR}/initiate-connections.sh
-
     test ${?} -ne 0 && kill 1
 fi
 
@@ -29,6 +27,9 @@ if test "${OPERATIONAL_MODE}" = "CLUSTERED_ENGINE"
 then
     echo "INFO: Configuring engine node - Engine nodes should receive config from the cluster"
 fi
+
+echo "INFO: Initiating connection management"
+${HOOKS_DIR}/initiate-connections.sh
 
 if test "${OPERATIONAL_MODE}" = "CLUSTERED_CONSOLE"
 then
