@@ -35,6 +35,13 @@
       "unique-identifiers": [
           "id"
       ]
+    },
+    {
+      "parameter-name": "encryptedSharedSecret",
+      "replace-name": "sharedSecret",
+      "unique-identifiers": [
+          "id"
+      ]
     }
   ]
 }

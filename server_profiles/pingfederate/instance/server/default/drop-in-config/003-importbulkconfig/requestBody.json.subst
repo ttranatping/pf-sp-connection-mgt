@@ -72,19 +72,19 @@
             "operationType": "SAVE",
             "items": [{
                 "activeRuntimeServerCerts": [{
-                    "location": "https://caa035644c84:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }],
                 "activeAdminConsoleCerts": [{
-                    "location": "https://caa035644c84:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }],
                 "adminConsoleCertRef": {
-                    "location": "https://caa035644c84:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 },
                 "runtimeServerCertRef": {
-                    "location": "https://caa035644c84:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }
             }],
@@ -190,7 +190,7 @@
             "operationType": "SAVE",
             "items": [{
                 "dataStoreRef": {
-                    "location": "https://caa035644c84:9999/pf-admin-api/v1/dataStores/ProvisionerDS",
+                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/dataStores/ProvisionerDS",
                     "id": "ProvisionerDS"
                 },
                 "synchronizationFrequency": 60
@@ -202,10 +202,10 @@
             "items": [{
                 "password": "${administrativeAccounts_items_Administrator_password}",
                 "roles": [
-                    "CRYPTO_ADMINISTRATOR",
+                    "EXPRESSION_ADMINISTRATOR",
                     "USER_ADMINISTRATOR",
                     "ADMINISTRATOR",
-                    "EXPRESSION_ADMINISTRATOR"
+                    "CRYPTO_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -263,7 +263,10 @@
         },
         {
             "operationType": "SAVE",
-            "items": [{}],
+            "items": [{"connectionManagement": {
+                "id": "connectionmgt",
+                "sharedSecret": "${serviceAuthentication_items_connectionManagement_connectionmgt_connectionmgt_sharedSecret}"
+            }}],
             "resourceType": "/serviceAuthentication"
         },
         {
@@ -332,7 +335,7 @@
                 "name": "simplePCV",
                 "id": "simplePCV",
                 "pluginDescriptorRef": {
-                    "location": "https://caa035644c84:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
+                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
                     "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
                 },
                 "attributeContract": {"coreAttributes": [{"name": "username"}]}
@@ -586,7 +589,7 @@
                 "name": "htmlFormAdapter",
                 "id": "htmlFormAdapter",
                 "pluginDescriptorRef": {
-                    "location": "https://caa035644c84:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
+                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
                     "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
                 },
                 "attributeContract": {
@@ -673,11 +676,13 @@
                 "allowUnidentifiedClientExtensionGrants": false,
                 "devicePollingInterval": 5,
                 "persistentGrantIdleTimeoutTimeUnit": "DAYS",
+                "userAuthorizationUrl": "",
                 "pendingAuthorizationTimeout": 600,
                 "exclusiveScopeGroups": [],
                 "userAuthorizationConsentPageSetting": "INTERNAL",
                 "bypassActivationCodeConfirmation": false,
                 "persistentGrantReuseGrantTypes": ["IMPLICIT"],
+                "registeredAuthorizationPath": "",
                 "persistentGrantLifetime": -1,
                 "refreshTokenLength": 42,
                 "allowUnidentifiedClientROCreds": false,
@@ -754,7 +759,7 @@
                                     "issuanceCriteria": {"conditionalCriteria": []}
                                 },
                                 "authenticationPolicyContractRef": {
-                                    "location": "https://caa035644c84:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
+                                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
                                     "id": "HJIsb3gljzzYLq9I"
                                 },
                                 "context": "Success",
@@ -765,7 +770,7 @@
                             "authenticationSource": {
                                 "type": "IDP_ADAPTER",
                                 "sourceRef": {
-                                    "location": "https://caa035644c84:9999/pf-admin-api/v1/idp/adapters/htmlFormAdapter",
+                                    "location": "https://d5de5344746c:9999/pf-admin-api/v1/idp/adapters/htmlFormAdapter",
                                     "id": "htmlFormAdapter"
                                 }
                             },
