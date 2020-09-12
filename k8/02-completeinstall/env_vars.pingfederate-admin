@@ -4,7 +4,7 @@ SERVER_PROFILE_PATH=pf-dns-ping-clustering/pingfederate
 SERVER_PROFILE_PARENT=CDRPARENT
 
 # Server Profile - Getting Started 
-SERVER_PROFILE_CDRPARENT_URL=https://github.com/pingidentity/pingidentity-cdr-sandbox.git
+SERVER_PROFILE_CDRPARENT_URL=https://github.com/ttranatping/pf-sp-connection-mgt.git
 SERVER_PROFILE_CDRPARENT_PATH=server_profiles/pingfederate
 SERVER_PROFILE_CDRPARENT_BRANCH=${CDR_SERVER_PROFILE_BRANCH}
 
