@@ -34,9 +34,9 @@ curl -X POST \
 xpath '/soapenv:Envelope/soapenv:Body/getConnectionResponse/getConnectionReturn/text()' | \
 sed "s/\&amp;/\&/;s/&lt;/\</;s/&lt;/\</;s/&gt;/\>/;s/&apos;/\'/" | \
 xml ed -u "//urn:SigningKeyPairReference/@MD5Fingerprint" -v "${SigningKeyPairMD5Reference_fingerprint}" | \
-xml ed -u "//urn:DsigVerificationCert/urn:Base64EncodedCert" -v "\${DsigVerificationCert_Base64Encoded}" | \
-xml ed -u "//urn:SecondaryDsigVerificationCert/urn:Base64EncodedCert" -v "\${SecondaryDsigVerificationCert_Base64EncodedCert}" | \
-xml ed -u "//urn:DecryptionKeyPairReference/@MD5Fingerprint" -v "\${DecryptionKeyPairMD5Reference_fingerprint}" | \
-xml ed -u "//urn:SecondaryDecryptionKeyPairReference/@MD5Fingerprint" -v "\${SecondaryDecryptionKeyPairMD5Reference_fingerprint}" | \
-xml ed -u "//urn:EncryptionCert/urn:Base64EncodedCert" -v "\${EncryptionCert_Base64EncodedCert}" | \
-xml ed -u "//md:RoleDescriptor/urn:availableCert/urn:Base64EncodedCert" -v "\${RoleDescriptor_Base64EncodedCert}" > $2
+xml ed -u "//urn:DsigVerificationCert/urn:Base64EncodedCert" -v "${DsigVerificationCert_Base64Encoded}" | \
+xml ed -u "//urn:SecondaryDsigVerificationCert/urn:Base64EncodedCert" -v "${SecondaryDsigVerificationCert_Base64EncodedCert}" | \
+xml ed -u "//urn:DecryptionKeyPairReference/@MD5Fingerprint" -v "${DecryptionKeyPairMD5Reference_fingerprint}" | \
+xml ed -u "//urn:SecondaryDecryptionKeyPairReference/@MD5Fingerprint" -v "${SecondaryDecryptionKeyPairMD5Reference_fingerprint}" | \
+xml ed -u "//urn:EncryptionCert/urn:Base64EncodedCert" -v "${EncryptionCert_Base64EncodedCert}" | \
+xml ed -u "//md:RoleDescriptor/urn:availableCert/urn:Base64EncodedCert" -v "${RoleDescriptor_Base64EncodedCert}" > $2
