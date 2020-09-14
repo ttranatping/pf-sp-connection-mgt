@@ -14,6 +14,7 @@ bodyContent="<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/e
     </soapenv:Envelope>"
 
 echo 'exporting connection = ' $1
+echo 'exporting to = ' $2
 
 SigningKeyPairMD5Reference_fingerprint=$(java -jar ./pf-cert-extract-md5/target/pf-cert-extract-md5-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./example-certs/SigningKeyPairReference.p12 2FederateM0re ping)
 DecryptionKeyPairMD5Reference_fingerprint=$(java -jar ./pf-cert-extract-md5/target/pf-cert-extract-md5-0.0.1-SNAPSHOT-jar-with-dependencies.jar ./example-certs/DecryptionKeyPairReference.p12 2FederateM0re ping)
@@ -38,5 +39,4 @@ xml ed -u "//urn:SecondaryDsigVerificationCert/urn:Base64EncodedCert" -v "\${Sec
 xml ed -u "//urn:DecryptionKeyPairReference/@MD5Fingerprint" -v "\${DecryptionKeyPairMD5Reference_fingerprint}" | \
 xml ed -u "//urn:SecondaryDecryptionKeyPairReference/@MD5Fingerprint" -v "\${SecondaryDecryptionKeyPairMD5Reference_fingerprint}" | \
 xml ed -u "//urn:EncryptionCert/urn:Base64EncodedCert" -v "\${EncryptionCert_Base64EncodedCert}" | \
-xml ed -u "//md:RoleDescriptor/urn:availableCert/urn:Base64EncodedCert" -v "\${RoleDescriptor_Base64EncodedCert}"
-
+xml ed -u "//md:RoleDescriptor/urn:availableCert/urn:Base64EncodedCert" -v "\${RoleDescriptor_Base64EncodedCert}" > $2
