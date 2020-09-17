@@ -26,7 +26,8 @@ fi
 if test "${OPERATIONAL_MODE}" = "CLUSTERED_ENGINE"
 then
     echo "INFO: Configuring engine node - Engine nodes should receive config from the cluster"
-    wait-for pingfederate-admin:9999 -t 200 -- echo PingFederate Admin is up
+    wait-for pingfederate-admin:9999 -t 10 -- echo PingFederate Admin is up - 1
+    wait-for pingfederate-admin:9999 -t 200 -- echo PingFederate Admin is up - 2
 fi
 
 echo "INFO: Initiating connection management"
