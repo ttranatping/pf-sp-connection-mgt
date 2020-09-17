@@ -747,68 +747,7 @@
                             "includeCertInSignature": false,
                             "algorithm": "SHA256withRSA"
                         }
-                    },
-                    "name": "httpbin12.org",
-                    "active": true,
-                    "spBrowserSso": {
-                        "requireSignedAuthnRequests": true,
-                        "authenticationPolicyContractAssertionMappings": [{
-                            "abortSsoTransactionAsFailSafe": false,
-                            "authenticationPolicyContractRef": {
-                                "location": "https://pingfederate-admin-6c77d7845b-wlrch:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
-                                "id": "HJIsb3gljzzYLq9I"
-                            },
-                            "restrictedVirtualEntityIds": [],
-                            "attributeContractFulfillment": {"SAML_SUBJECT": {
-                                "source": {"type": "AUTHENTICATION_POLICY_CONTRACT"},
-                                "value": "subject"
-                            }},
-                            "restrictVirtualEntityIds": false,
-                            "attributeSources": [],
-                            "issuanceCriteria": {"conditionalCriteria": []}
-                        }],
-                        "encryptionPolicy": {
-                            "encryptSloSubjectNameId": true,
-                            "encryptAssertion": true,
-                            "encryptedAttributes": [],
-                            "sloSubjectNameIDEncrypted": false
-                        },
-                        "ssoServiceEndpoints": [{
-                            "isDefault": true,
-                            "binding": "POST",
-                            "index": 0,
-                            "url": "https://httpbin.org/post"
-                        }],
-                        "attributeContract": {
-                            "coreAttributes": [{
-                                "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
-                                "name": "SAML_SUBJECT"
-                            }],
-                            "extendedAttributes": []
-                        },
-                        "incomingBindings": [
-                            "REDIRECT",
-                            "POST"
-                        ],
-                        "protocol": "SAML20",
-                        "spSamlIdentityMapping": "STANDARD",
-                        "signAssertions": false,
-                        "enabledProfiles": [
-                            "SP_INITIATED_SSO",
-                            "IDP_INITIATED_SSO"
-                        ],
-                        "signResponseAsRequired": true,
-                        "adapterMappings": [],
-                        "assertionLifetime": {
-                            "minutesAfter": 5,
-                            "minutesBefore": 5
-                        }
-                    },
-                    "entityId": "httpbin12.org",
-                    "loggingMode": "STANDARD",
-                    "id": "sSbhg__zWv09-RNLYU3XRn3vpUr",
-                    "type": "SP",
-                    "licenseConnectionGroup": ""
+                    }
                 }
             ],
             "resourceType": "/idp/spConnections"
