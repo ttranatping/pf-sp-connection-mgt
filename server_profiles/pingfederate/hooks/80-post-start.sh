@@ -8,7 +8,7 @@
 # shellcheck source=../../../../pingcommon/opt/staging/hooks/pingcommon.lib.sh
 . "${HOOKS_DIR}/pingcommon.lib.sh"
 
-if test "${OPERATIONAL_MODE}" = "CLUSTERED_CONSOLE" || test "${OPERATIONAL_MODE}" = "STANDALONE"
+if test "${OPERATIONAL_MODE}" = "CLUSTERED_CONSOLE"  || test "${OPERATIONAL_MODE}" = "CLUSTERED_DUAL" || test "${OPERATIONAL_MODE}" = "STANDALONE"
 then
     echo "INFO: waiting for PingFederate to start before importing configuration"
     wait-for 127.0.0.1:9999 -t 200 -- echo PingFederate is up
