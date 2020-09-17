@@ -82,19 +82,19 @@
             "operationType": "SAVE",
             "items": [{
                 "activeRuntimeServerCerts": [{
-                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }],
                 "activeAdminConsoleCerts": [{
-                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }],
                 "adminConsoleCertRef": {
-                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 },
                 "runtimeServerCertRef": {
-                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }
             }],
@@ -200,7 +200,7 @@
             "operationType": "SAVE",
             "items": [{
                 "dataStoreRef": {
-                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/dataStores/ProvisionerDS",
+                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/dataStores/ProvisionerDS",
                     "id": "ProvisionerDS"
                 },
                 "synchronizationFrequency": 60
@@ -212,10 +212,10 @@
             "items": [{
                 "password": "${administrativeAccounts_items_Administrator_password}",
                 "roles": [
-                    "EXPRESSION_ADMINISTRATOR",
                     "CRYPTO_ADMINISTRATOR",
                     "ADMINISTRATOR",
-                    "USER_ADMINISTRATOR"
+                    "USER_ADMINISTRATOR",
+                    "EXPRESSION_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -345,7 +345,7 @@
                 "name": "simplePCV",
                 "id": "simplePCV",
                 "pluginDescriptorRef": {
-                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
+                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
                     "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
                 },
                 "attributeContract": {"coreAttributes": [{"name": "username"}]}
@@ -599,7 +599,7 @@
                 "name": "htmlFormAdapter",
                 "id": "htmlFormAdapter",
                 "pluginDescriptorRef": {
-                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
+                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
                     "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
                 },
                 "attributeContract": {
@@ -636,78 +636,76 @@
         },
         {
             "operationType": "SAVE",
-            "items": [
-                {
-                    "contactInfo": {},
-                    "virtualEntityIds": [],
-                    "credentials": {
-                        "certs": [],
-                        "signingSettings": {
-                            "signingKeyPairRef": {
-                                "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/keyPairs/signing/8tfeesiviqshawkvh3fr8zuw5",
-                                "id": "8tfeesiviqshawkvh3fr8zuw5"
-                            },
-                            "includeRawKeyInSignature": false,
-                            "includeCertInSignature": false,
-                            "algorithm": "SHA256withRSA"
-                        }
-                    },
-                    "name": "httpbin3.org",
-                    "active": false,
-                    "spBrowserSso": {
-                        "protocol": "SAML20",
-                        "requireSignedAuthnRequests": false,
-                        "spSamlIdentityMapping": "STANDARD",
-                        "signAssertions": false,
-                        "authenticationPolicyContractAssertionMappings": [{
-                            "abortSsoTransactionAsFailSafe": false,
-                            "authenticationPolicyContractRef": {
-                                "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
-                                "id": "HJIsb3gljzzYLq9I"
-                            },
-                            "restrictedVirtualEntityIds": [],
-                            "attributeContractFulfillment": {"SAML_SUBJECT": {
-                                "source": {"type": "AUTHENTICATION_POLICY_CONTRACT"},
-                                "value": "subject"
-                            }},
-                            "restrictVirtualEntityIds": false,
-                            "attributeSources": [],
-                            "issuanceCriteria": {"conditionalCriteria": []}
-                        }],
-                        "encryptionPolicy": {
-                            "encryptSloSubjectNameId": false,
-                            "encryptAssertion": false,
-                            "encryptedAttributes": [],
-                            "sloSubjectNameIDEncrypted": false
+            "items": [{
+                "contactInfo": {},
+                "virtualEntityIds": [],
+                "credentials": {
+                    "certs": [],
+                    "signingSettings": {
+                        "signingKeyPairRef": {
+                            "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/keyPairs/signing/8tfeesiviqshawkvh3fr8zuw5",
+                            "id": "8tfeesiviqshawkvh3fr8zuw5"
                         },
-                        "enabledProfiles": ["IDP_INITIATED_SSO"],
-                        "signResponseAsRequired": true,
-                        "ssoServiceEndpoints": [{
-                            "isDefault": true,
-                            "binding": "POST",
-                            "index": 0,
-                            "url": "https://httpbin.org/post"
-                        }],
-                        "adapterMappings": [],
-                        "assertionLifetime": {
-                            "minutesAfter": 5,
-                            "minutesBefore": 5
+                        "includeRawKeyInSignature": false,
+                        "includeCertInSignature": false,
+                        "algorithm": "SHA256withRSA"
+                    }
+                },
+                "name": "httpbin3.org",
+                "active": true,
+                "spBrowserSso": {
+                    "protocol": "SAML20",
+                    "requireSignedAuthnRequests": false,
+                    "spSamlIdentityMapping": "STANDARD",
+                    "signAssertions": false,
+                    "authenticationPolicyContractAssertionMappings": [{
+                        "abortSsoTransactionAsFailSafe": false,
+                        "authenticationPolicyContractRef": {
+                            "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
+                            "id": "HJIsb3gljzzYLq9I"
                         },
-                        "attributeContract": {
-                            "coreAttributes": [{
-                                "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
-                                "name": "SAML_SUBJECT"
-                            }],
-                            "extendedAttributes": []
-                        }
+                        "restrictedVirtualEntityIds": [],
+                        "attributeContractFulfillment": {"SAML_SUBJECT": {
+                            "source": {"type": "AUTHENTICATION_POLICY_CONTRACT"},
+                            "value": "subject"
+                        }},
+                        "restrictVirtualEntityIds": false,
+                        "attributeSources": [],
+                        "issuanceCriteria": {"conditionalCriteria": []}
+                    }],
+                    "encryptionPolicy": {
+                        "encryptSloSubjectNameId": false,
+                        "encryptAssertion": false,
+                        "encryptedAttributes": [],
+                        "sloSubjectNameIDEncrypted": false
                     },
-                    "entityId": "httpbin3.org",
-                    "loggingMode": "STANDARD",
-                    "id": "A.0jBjASPY.yicdN6qS.k3GJ_4V",
-                    "type": "SP",
-                    "licenseConnectionGroup": ""
-                }
-            ],
+                    "enabledProfiles": ["IDP_INITIATED_SSO"],
+                    "signResponseAsRequired": true,
+                    "ssoServiceEndpoints": [{
+                        "isDefault": true,
+                        "binding": "POST",
+                        "index": 0,
+                        "url": "https://httpbin.org/post"
+                    }],
+                    "adapterMappings": [],
+                    "assertionLifetime": {
+                        "minutesAfter": 5,
+                        "minutesBefore": 5
+                    },
+                    "attributeContract": {
+                        "coreAttributes": [{
+                            "nameFormat": "urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified",
+                            "name": "SAML_SUBJECT"
+                        }],
+                        "extendedAttributes": []
+                    }
+                },
+                "entityId": "httpbin3.org",
+                "loggingMode": "STANDARD",
+                "id": "A.0jBjASPY.yicdN6qS.k3GJ_4V",
+                "type": "SP",
+                "licenseConnectionGroup": ""
+            }],
             "resourceType": "/idp/spConnections"
         },
         {
@@ -762,11 +760,13 @@
                 "allowUnidentifiedClientExtensionGrants": false,
                 "devicePollingInterval": 5,
                 "persistentGrantIdleTimeoutTimeUnit": "DAYS",
+                "userAuthorizationUrl": "",
                 "pendingAuthorizationTimeout": 600,
                 "exclusiveScopeGroups": [],
                 "userAuthorizationConsentPageSetting": "INTERNAL",
                 "bypassActivationCodeConfirmation": false,
                 "persistentGrantReuseGrantTypes": ["IMPLICIT"],
+                "registeredAuthorizationPath": "",
                 "persistentGrantLifetime": -1,
                 "refreshTokenLength": 42,
                 "allowUnidentifiedClientROCreds": false,
@@ -843,7 +843,7 @@
                                     "issuanceCriteria": {"conditionalCriteria": []}
                                 },
                                 "authenticationPolicyContractRef": {
-                                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
+                                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
                                     "id": "HJIsb3gljzzYLq9I"
                                 },
                                 "context": "Success",
@@ -854,7 +854,7 @@
                             "authenticationSource": {
                                 "type": "IDP_ADAPTER",
                                 "sourceRef": {
-                                    "location": "https://pingfederate-admin-6c77d7845b-zm4cd:9999/pf-admin-api/v1/idp/adapters/htmlFormAdapter",
+                                    "location": "https://pingfederate-admin-6c77d7845b-lsp7p:9999/pf-admin-api/v1/idp/adapters/htmlFormAdapter",
                                     "id": "htmlFormAdapter"
                                 }
                             },
