@@ -1,6 +1,12 @@
 {
   "search-replace":[
   ],
+  "remove-config":[
+  	{
+  	  "key": "resourceType",
+	  "value": "/idp/spConnections"
+  	}
+  ],
   "expose-parameters":[
     {
       "parameter-name": "fileData",
