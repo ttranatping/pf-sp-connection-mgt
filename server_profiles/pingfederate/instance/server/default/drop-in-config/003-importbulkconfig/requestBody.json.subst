@@ -379,7 +379,7 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "password": "${administrativeAccounts_items_Administrator_password}",
+                "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
                     "CRYPTO_ADMINISTRATOR",
                     "USER_ADMINISTRATOR",
