@@ -258,7 +258,9 @@ public class App {
 					if(currentIdentifier == null)
 						continue;
 
-					String propertyName = path + "_" + getEscapedValue(currentIdentifier) + "_" + getEscapedValue(replaceName);
+					String propertyName = path + "_" + replaceName;
+					if(!currentIdentifier.equals(""))
+						propertyName = path + "_" + getEscapedValue(currentIdentifier) + "_" + getEscapedValue(replaceName);
 
 					boolean isSetEnvVar = isSetEnvVar(propertyName);
 
@@ -360,11 +362,11 @@ public class App {
 					return returnUidValue;
 
 				if(returnUidValue == null)
-					return "na";
+					return "";
 			}
 		}
 
-		return null;
+		return "";
 	}
 
 	private String getEscapedValue(String in)
