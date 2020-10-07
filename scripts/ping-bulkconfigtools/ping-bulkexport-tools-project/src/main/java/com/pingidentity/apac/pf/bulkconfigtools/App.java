@@ -253,7 +253,7 @@ public class App {
 					else
 						replaceValue = String.valueOf(jsonObject.get(parameterName));
 
-					if(parameterName.equals("encryptedKeyData"))
+					if(parameterName.equals("encryptedPassword"))
 					{
 						int i = 0;
 					}
@@ -361,15 +361,12 @@ public class App {
 					returnUidValue = String.valueOf(jsonObject.get(uid));
 				else if(parentObject != null && parentObject.has(uid))
 					returnUidValue = String.valueOf(parentObject.get(uid));
-				else
-					returnUidValue = "";
 
 				if(returnUidValue != null && (expectedUIDValue != null && returnUidValue.equals(expectedUIDValue) || expectedUIDValue == null))
 					return returnUidValue;
-
-				if(returnUidValue == null)
-					return null;
 			}
+
+			return "";
 		}
 
 		return null;
