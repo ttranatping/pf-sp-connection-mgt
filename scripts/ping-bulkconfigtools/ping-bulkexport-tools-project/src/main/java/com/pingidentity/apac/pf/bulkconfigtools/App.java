@@ -253,11 +253,11 @@ public class App {
 					else
 						replaceValue = String.valueOf(jsonObject.get(parameterName));
 
-					if(parameterName.equals("fileData"))
+					if(parameterName.equals("encryptedKeyData"))
 					{
 						int i = 0;
 					}
-					String currentIdentifier = getUniqueIdentifier(configJSON, jsonObject, parentObject);
+					String currentIdentifier = getUniqueIdentifier(path, configJSON, jsonObject, parentObject);
 
 					if(currentIdentifier == null)
 						continue;
@@ -336,7 +336,7 @@ public class App {
 		return configNameList;
 	}
 
-	private String getUniqueIdentifier(JSONObject configJSON, JSONObject jsonObject, JSONObject parentObject) {
+	private String getUniqueIdentifier(String path, JSONObject configJSON, JSONObject jsonObject, JSONObject parentObject) {
 
 		if(configJSON.has("unique-identifiers"))
 		{
@@ -361,6 +361,8 @@ public class App {
 					returnUidValue = String.valueOf(jsonObject.get(uid));
 				else if(parentObject != null && parentObject.has(uid))
 					returnUidValue = String.valueOf(parentObject.get(uid));
+				else
+					returnUidValue = "";
 
 				if(returnUidValue != null && (expectedUIDValue != null && returnUidValue.equals(expectedUIDValue) || expectedUIDValue == null))
 					return returnUidValue;

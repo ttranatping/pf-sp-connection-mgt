@@ -185,8 +185,14 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "current": {"creationDate": "2020-09-11T22:30:07.597Z"},
-                "pending": {"creationDate": "2020-09-11T22:30:07.598Z"}
+                "current": {
+                    "keyData": "${serverSettings_systemKeys_items_current_keyData}",
+                    "creationDate": "2020-09-11T22:30:07.597Z"
+                },
+                "pending": {
+                    "keyData": "${serverSettings_systemKeys_items_pending_keyData}",
+                    "creationDate": "2020-09-11T22:30:07.598Z"
+                }
             }],
             "resourceType": "/serverSettings/systemKeys"
         },
@@ -204,6 +210,7 @@
         {
             "operationType": "SAVE",
             "items": [{
+                "password": "${administrativeAccounts_items_password}",
                 "roles": [
                     "USER_ADMINISTRATOR",
                     "EXPRESSION_ADMINISTRATOR",
