@@ -52,6 +52,18 @@
       "unique-identifiers": [
           "clientId"
       ]
+    },
+    {
+      "parameter-name": "value",
+      "unique-identifiers": [
+          "name=PingID Properties"
+      ]
+    },
+    {
+      "parameter-name": "value",
+      "unique-identifiers": [
+          "name=PingID SDK Properties"
+      ]
     }
   ]
 }

@@ -255,14 +255,15 @@ public class App {
 
 					String currentIdentifier = getUniqueIdentifier(configJSON, jsonObject, parentObject);
 
-					String propertyName = path + "_" + replaceName;
-					if(currentIdentifier != null)
-						propertyName = path + "_" + getEscapedValue(currentIdentifier) + "_" + getEscapedValue(replaceName);
+					if(currentIdentifier == null)
+						continue;
+
+					String propertyName = path + "_" + getEscapedValue(currentIdentifier) + "_" + getEscapedValue(replaceName);
 
 					boolean isSetEnvVar = isSetEnvVar(propertyName);
-					
+
 					propertyName = getConfigAlias(propertyName);
-					
+
 					jsonObject.put(replaceName, "${" + propertyName + "}");
 
 					if(isSetEnvVar && !returnProperties.containsKey(propertyName))
@@ -275,22 +276,22 @@ public class App {
 	private boolean isSetEnvVar(String propertyName) {
 		if(this.inConfigAliases == null)
 			return true;
-		
+
 		for(Object currentAliasConfigObj : this.inConfigAliases)
 		{
 			JSONObject configAliasConfig = (JSONObject) currentAliasConfigObj;
-			
+
 			List<String> configNameList = getConfigNameList(configAliasConfig);
-			
+
 			if(!configNameList.contains(propertyName))
 				continue;
-			
+
 			if(!configAliasConfig.has("is-apply-envfile"))
 				return true;
-			
+
 			return configAliasConfig.getBoolean("is-apply-envfile");
 		}
-		
+
 		return true;
 	}
 
@@ -301,10 +302,10 @@ public class App {
 		for(Object currentAliasConfigObj : this.inConfigAliases)
 		{
 			JSONObject configAliasConfig = (JSONObject) currentAliasConfigObj;
-			
+
 			List<String> configNameList = getConfigNameList(configAliasConfig);
 			System.out.println("Looking for config aliase: " + propertyName + ", " + configNameList.get(0));
-			
+
 			if(!configNameList.contains(propertyName))
 				continue;
 
@@ -312,38 +313,54 @@ public class App {
 			if(!configAliasConfig.has("replace-name"))
 				return propertyName;
 			System.out.println("New config aliase: " + configAliasConfig.getString("replace-name"));
-			
+
 			return configAliasConfig.getString("replace-name");
 		}
-		
-		return propertyName;		
+
+		return propertyName;
 	}
-	
+
 	private List<String> getConfigNameList(JSONObject configAliasConfig)
-	{		
+	{
 		JSONArray configNames = (JSONArray) configAliasConfig.get("config-names");
-		
+
 		String joinedConfigNames = configNames.join(",").replace("\"", "");
 		List<String> configNameList = Arrays.asList(joinedConfigNames.split(","));
-		
+
 		return configNameList;
 	}
 
 	private String getUniqueIdentifier(JSONObject configJSON, JSONObject jsonObject, JSONObject parentObject) {
-		
+
 		if(configJSON.has("unique-identifiers"))
 		{
 			JSONArray uidArray = (JSONArray) configJSON.get("unique-identifiers");
 			for(Object uidObj : uidArray)
 			{
-				String uid = String.valueOf(uidObj);
+				String uidConfig = String.valueOf(uidObj);
+				String uid = null;
+				String expectedUIDValue = null;
+
+				if(uidConfig.contains("="))
+				{
+					String[] uidConfigSplit = uidConfig.split("=");
+					uid = uidConfigSplit[0];
+					expectedUIDValue = uidConfigSplit[1];
+				}
+				else
+					uid = uidConfig;
+
+				String returnUidValue = null;
 				if(jsonObject.has(uid))
-					return String.valueOf(jsonObject.get(uid));
+					returnUidValue = String.valueOf(jsonObject.get(uid));
 				else if(parentObject != null && parentObject.has(uid))
-					return String.valueOf(parentObject.get(uid));
+					returnUidValue = String.valueOf(parentObject.get(uid));
+
+				if(returnUidValue != null && (expectedUIDValue == null || returnUidValue.equals(expectedUIDValue)))
+					return returnUidValue;
 			}
 		}
-		
+
 		return null;
 	}
 
@@ -375,9 +392,9 @@ public class App {
 				String propertyName = replace.replace("$", "").replace("{", "").replace("}", "");
 
 				boolean isSetEnvVar = isSetEnvVar(propertyName);
-				
+
 				propertyName = getConfigAlias(propertyName);
-				
+
 				if(isSetEnvVar && !returnProperties.containsKey(propertyName))
 					returnProperties.put(propertyName, search);
 			}
@@ -440,4 +457,3 @@ public class App {
 
 	}
 }
-

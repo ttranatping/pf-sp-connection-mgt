@@ -82,19 +82,19 @@
             "operationType": "SAVE",
             "items": [{
                 "activeRuntimeServerCerts": [{
-                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }],
                 "activeAdminConsoleCerts": [{
-                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }],
                 "adminConsoleCertRef": {
-                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 },
                 "runtimeServerCertRef": {
-                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
+                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/keyPairs/sslServer/beygezw1fq8s8bdl6x4bhm8nz",
                     "id": "beygezw1fq8s8bdl6x4bhm8nz"
                 }
             }],
@@ -185,14 +185,8 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "current": {
-                    "keyData": "${serverSettings_systemKeys_items_current_keyData}",
-                    "creationDate": "2020-09-11T22:30:07.597Z"
-                },
-                "pending": {
-                    "keyData": "${serverSettings_systemKeys_items_pending_keyData}",
-                    "creationDate": "2020-09-11T22:30:07.598Z"
-                }
+                "current": {"creationDate": "2020-09-11T22:30:07.597Z"},
+                "pending": {"creationDate": "2020-09-11T22:30:07.598Z"}
             }],
             "resourceType": "/serverSettings/systemKeys"
         },
@@ -200,7 +194,7 @@
             "operationType": "SAVE",
             "items": [{
                 "dataStoreRef": {
-                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/dataStores/ProvisionerDS",
+                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/dataStores/ProvisionerDS",
                     "id": "ProvisionerDS"
                 },
                 "synchronizationFrequency": 60
@@ -212,10 +206,10 @@
             "items": [{
                 "password": "${PING_IDENTITY_PASSWORD}",
                 "roles": [
-                    "CRYPTO_ADMINISTRATOR",
+                    "USER_ADMINISTRATOR",
                     "EXPRESSION_ADMINISTRATOR",
                     "ADMINISTRATOR",
-                    "USER_ADMINISTRATOR"
+                    "CRYPTO_ADMINISTRATOR"
                 ],
                 "auditor": false,
                 "description": "Initial administrator user.",
@@ -345,7 +339,7 @@
                 "name": "simplePCV",
                 "id": "simplePCV",
                 "pluginDescriptorRef": {
-                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
+                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/passwordCredentialValidators/descriptors/org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator",
                     "id": "org.sourceid.saml20.domain.SimpleUsernamePasswordCredentialValidator"
                 },
                 "attributeContract": {"coreAttributes": [{"name": "username"}]}
@@ -561,7 +555,7 @@
                             },
                             {
                                 "name": "PingID Properties",
-                                "value": ""
+                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_PingID_Properties_value}"
                             },
                             {
                                 "name": "Require Verified Email",
@@ -600,7 +594,7 @@
                     "name": "htmlFormAdapter",
                     "id": "htmlFormAdapter",
                     "pluginDescriptorRef": {
-                        "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
+                        "location": "https://74b5a03efda1:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter",
                         "id": "com.pingidentity.adapters.htmlform.idp.HtmlFormIdpAuthnAdapter"
                     },
                     "attributeContract": {
@@ -648,7 +642,7 @@
                         "fields": [
                             {
                                 "name": "PingID Properties",
-                                "value": "I0F1dG8tR2VuZXJhdGVkIGZyb20gUGluZ09uZSwgZG93bmxvYWRlZCBieSBpZD1bNDQ4MDgxXSBlbWFpbD1bdHRyYW4raWRwdjJAcGluZ2lkZW50aXR5LmNvbV0KI1dlZCBOb3YgMjggMjI6MjE6NDcgTVNUIDIwMTgKdXNlX2Jhc2U2NF9rZXk9dmdGK1F1dFZYNXdFTkl1dndMeHB0cWhaajQ4TXdmVVdiakhiL2taLy9Iaz0KdXNlX3NpZ25hdHVyZT10cnVlCnRva2VuPTNmYmRjNmVlNjE2OGQ5N2NiMDA5OThlYzUxNzM2OWY2CmlkcF91cmw9aHR0cHM6Ly9pZHB4bnlsM20ucGluZ2lkZW50aXR5LmNvbS9waW5naWQKb3JnX2FsaWFzPTNhZGRkOTlhLTcxZjgtNDQ3Yi05MDUzLWIyZTMzNzVhZTJjZQphZG1pbl91cmw9aHR0cHM6Ly9pZHB4bnlsM20ucGluZ2lkZW50aXR5LmNvbS9waW5naWQKYXV0aGVudGljYXRvcl91cmw9aHR0cHM6Ly9hdXRoZW50aWNhdG9yLnBpbmdvbmUuY29tL3BpbmdpZC9wcG0K"
+                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_PingID_Properties_value}"
                             },
                             {
                                 "name": "LDAP Data source",
@@ -759,7 +753,7 @@
                     "name": "pingidAdapter",
                     "id": "pingidAdapter",
                     "pluginDescriptorRef": {
-                        "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.pingid.PingIDAdapter",
+                        "location": "https://74b5a03efda1:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.pingid.PingIDAdapter",
                         "id": "com.pingidentity.adapters.pingid.PingIDAdapter"
                     },
                     "attributeContract": {
@@ -825,7 +819,7 @@
                         "fields": [
                             {
                                 "name": "PingID SDK Properties",
-				"value": "I0F1dG8tR2VuZXJhdGVkIGZyb20gUGluZ09uZSwgZG93bmxvYWRlZCBieSBpZD1bODI3MzAzXSBlbWFpbD1bdHRyYW4rdW5pc3VwZXJAcGluZ2lkZW50aXR5LmNvbV0KI0ZyaSBNYXkgMjkgMDQ6MjQ6MzEgTURUIDIwMjAKYXBpX2tleT1aakF5TlRka1lqa3RZalkwWVMwMFptUmpMV0V4TUdNdFpqTTFNR1l6TVRoa04yUm0KdG9rZW49YmI2MTNmNmVjNmMyNGY3ZDliMmZlMzIzNDJmYjZjNjQKcGluZ2lkc2RrX3VybD1odHRwczovL3Nkay5waW5naWQuY29tLmF1L3BpbmdpZAphY2NvdW50X2lkPTVkZTIwYzVlLWE4OWUtNGE0OS1hYWI4LTFkYTI2ODI0NTA3ZQo="
+                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_PingID_SDK_Properties_value}"
                             },
                             {
                                 "name": "Application ID",
@@ -900,7 +894,7 @@
                     "name": "pingidSDKAdapterNoPairing",
                     "id": "pingidSDKAdapter",
                     "pluginDescriptorRef": {
-                        "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.pingid.PingIDSDKAdapter",
+                        "location": "https://74b5a03efda1:9999/pf-admin-api/v1/idp/adapters/descriptors/com.pingidentity.adapters.pingid.PingIDSDKAdapter",
                         "id": "com.pingidentity.adapters.pingid.PingIDSDKAdapter"
                     },
                     "attributeContract": {
@@ -966,7 +960,7 @@
                         "certs": [],
                         "signingSettings": {
                             "signingKeyPairRef": {
-                                "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/keyPairs/signing/8tfeesiviqshawkvh3fr8zuw5",
+                                "location": "https://74b5a03efda1:9999/pf-admin-api/v1/keyPairs/signing/8tfeesiviqshawkvh3fr8zuw5",
                                 "id": "8tfeesiviqshawkvh3fr8zuw5"
                             },
                             "includeRawKeyInSignature": false,
@@ -984,7 +978,7 @@
                         "authenticationPolicyContractAssertionMappings": [{
                             "abortSsoTransactionAsFailSafe": false,
                             "authenticationPolicyContractRef": {
-                                "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
+                                "location": "https://74b5a03efda1:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
                                 "id": "HJIsb3gljzzYLq9I"
                             },
                             "restrictedVirtualEntityIds": [],
@@ -1062,7 +1056,7 @@
                         "blockEncryptionAlgorithm": "AES_128",
                         "signingSettings": {
                             "signingKeyPairRef": {
-                                "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/keyPairs/signing/8tfeesiviqshawkvh3fr8zuw5",
+                                "location": "https://74b5a03efda1:9999/pf-admin-api/v1/keyPairs/signing/8tfeesiviqshawkvh3fr8zuw5",
                                 "id": "8tfeesiviqshawkvh3fr8zuw5"
                             },
                             "includeRawKeyInSignature": false,
@@ -1077,7 +1071,7 @@
                         "authenticationPolicyContractAssertionMappings": [{
                             "abortSsoTransactionAsFailSafe": false,
                             "authenticationPolicyContractRef": {
-                                "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
+                                "location": "https://74b5a03efda1:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
                                 "id": "HJIsb3gljzzYLq9I"
                             },
                             "restrictedVirtualEntityIds": [],
@@ -1116,8 +1110,8 @@
                         "spSamlIdentityMapping": "STANDARD",
                         "signAssertions": false,
                         "enabledProfiles": [
-                            "SP_INITIATED_SSO",
-                            "IDP_INITIATED_SSO"
+                            "IDP_INITIATED_SSO",
+                            "SP_INITIATED_SSO"
                         ],
                         "signResponseAsRequired": true,
                         "adapterMappings": [],
@@ -1186,11 +1180,13 @@
                 "allowUnidentifiedClientExtensionGrants": false,
                 "devicePollingInterval": 5,
                 "persistentGrantIdleTimeoutTimeUnit": "DAYS",
+                "userAuthorizationUrl": "",
                 "pendingAuthorizationTimeout": 600,
                 "exclusiveScopeGroups": [],
                 "userAuthorizationConsentPageSetting": "INTERNAL",
                 "bypassActivationCodeConfirmation": false,
                 "persistentGrantReuseGrantTypes": ["IMPLICIT"],
+                "registeredAuthorizationPath": "",
                 "persistentGrantLifetime": -1,
                 "refreshTokenLength": 42,
                 "allowUnidentifiedClientROCreds": false,
@@ -1306,7 +1302,7 @@
                                     "issuanceCriteria": {"conditionalCriteria": []}
                                 },
                                 "authenticationPolicyContractRef": {
-                                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
+                                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/authenticationPolicyContracts/HJIsb3gljzzYLq9I",
                                     "id": "HJIsb3gljzzYLq9I"
                                 },
                                 "context": "Success",
@@ -1317,7 +1313,7 @@
                             "authenticationSource": {
                                 "type": "IDP_ADAPTER",
                                 "sourceRef": {
-                                    "location": "https://c1ca3bc8a589:9999/pf-admin-api/v1/idp/adapters/htmlFormAdapter",
+                                    "location": "https://74b5a03efda1:9999/pf-admin-api/v1/idp/adapters/htmlFormAdapter",
                                     "id": "htmlFormAdapter"
                                 }
                             },
