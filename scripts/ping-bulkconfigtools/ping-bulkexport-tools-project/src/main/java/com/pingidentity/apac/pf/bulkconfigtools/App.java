@@ -253,10 +253,6 @@ public class App {
 					else
 						replaceValue = String.valueOf(jsonObject.get(parameterName));
 
-					if(parameterName.equals("encryptedPassword"))
-					{
-						int i = 0;
-					}
 					String currentIdentifier = getUniqueIdentifier(path, configJSON, jsonObject, parentObject);
 
 					if(currentIdentifier == null)
