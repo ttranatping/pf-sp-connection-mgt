@@ -72,8 +72,8 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "password": "${keyPairs_sslServer_items_beygezw1fq8s8bdl6x4bhm8nz_password}",
-                "fileData": "${keyPairs_sslServer_items_beygezw1fq8s8bdl6x4bhm8nz_fileData}",
+                "password": "${keyPairs_sslServer_items_beygezw1fq8s8bdl6x4bhm8nz_beygezw1fq8s8bdl6x4bhm8nz_password}",
+                "fileData": "${keyPairs_sslServer_items_beygezw1fq8s8bdl6x4bhm8nz_beygezw1fq8s8bdl6x4bhm8nz_fileData}",
                 "id": "beygezw1fq8s8bdl6x4bhm8nz"
             }],
             "resourceType": "/keyPairs/sslServer"
@@ -103,8 +103,8 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "password": "${keyPairs_signing_items_8tfeesiviqshawkvh3fr8zuw5_password}",
-                "fileData": "${keyPairs_signing_items_8tfeesiviqshawkvh3fr8zuw5_fileData}",
+                "password": "${keyPairs_signing_items_8tfeesiviqshawkvh3fr8zuw5_8tfeesiviqshawkvh3fr8zuw5_password}",
+                "fileData": "${keyPairs_signing_items_8tfeesiviqshawkvh3fr8zuw5_8tfeesiviqshawkvh3fr8zuw5_fileData}",
                 "id": "8tfeesiviqshawkvh3fr8zuw5"
             }],
             "resourceType": "/keyPairs/signing"
@@ -122,7 +122,7 @@
                     "connectionUrl": "jdbc:hsqldb:${pf.server.data.dir}${/}hypersonic${/}ProvisionerDefaultDB;hsqldb.lock_file=false",
                     "defaultSource": true
                 }],
-                "password": "${dataStores_items_ProvisionerDS_password}",
+                "password": "${dataStores_items_ProvisionerDS_ProvisionerDS_password}",
                 "allowMultiValueAttributes": false,
                 "driverClass": "org.hsqldb.jdbcDriver",
                 "name": "ProvisionerDS (sa)",
@@ -185,14 +185,8 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "current": {
-                    "keyData": "${serverSettings_systemKeys_items_current_keyData}",
-                    "creationDate": "2020-09-11T22:30:07.597Z"
-                },
-                "pending": {
-                    "keyData": "${serverSettings_systemKeys_items_pending_keyData}",
-                    "creationDate": "2020-09-11T22:30:07.598Z"
-                }
+                "current": {"creationDate": "2020-09-11T22:30:07.597Z"},
+                "pending": {"creationDate": "2020-09-11T22:30:07.598Z"}
             }],
             "resourceType": "/serverSettings/systemKeys"
         },
@@ -210,7 +204,6 @@
         {
             "operationType": "SAVE",
             "items": [{
-                "password": "${administrativeAccounts_items_password}",
                 "roles": [
                     "USER_ADMINISTRATOR",
                     "EXPRESSION_ADMINISTRATOR",
@@ -275,7 +268,7 @@
             "operationType": "SAVE",
             "items": [{"connectionManagement": {
                 "id": "connectionmgt",
-                "sharedSecret": "${serviceAuthentication_items_connectionManagement_connectionmgt_sharedSecret}"
+                "sharedSecret": "${serviceAuthentication_items_connectionManagement_connectionmgt_connectionmgt_sharedSecret}"
             }}],
             "resourceType": "/serviceAuthentication"
         },
@@ -301,19 +294,19 @@
                                 "fields": [
                                     {
                                         "name": "Username",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "user.1"
                                     },
                                     {
                                         "name": "Password",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_Password_value}"
                                     },
                                     {
                                         "name": "Confirm Password",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_Confirm_Password_value}"
                                     },
                                     {
                                         "name": "Relax Password Requirements",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "true"
                                     }
                                 ]
                             },
@@ -322,19 +315,19 @@
                                 "fields": [
                                     {
                                         "name": "Username",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "user.2"
                                     },
                                     {
                                         "name": "Password",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_Password_value}"
                                     },
                                     {
                                         "name": "Confirm Password",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_Confirm_Password_value}"
                                     },
                                     {
                                         "name": "Relax Password Requirements",
-                                        "value": "${passwordCredentialValidators_items_simplePCV_configuration_tables_rows_fields_value}"
+                                        "value": "true"
                                     }
                                 ]
                             }
@@ -373,11 +366,11 @@
                         "attributeContractFulfillment": {
                             "policy.action": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_htmlFormAdapter_attributeMapping_attributeContractFulfillment_policy.action_value}"
+                                "value": "policy.action"
                             },
                             "username": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_htmlFormAdapter_attributeMapping_attributeContractFulfillment_username_value}"
+                                "value": "username"
                             }
                         },
                         "attributeSources": [],
@@ -390,210 +383,210 @@
                                 "defaultRow": false,
                                 "fields": [{
                                     "name": "Password Credential Validator Instance",
-                                    "value": "${idp_adapters_items_htmlFormAdapter_configuration_tables_rows_fields_value}"
+                                    "value": "simplePCV"
                                 }]
                             }]
                         }],
                         "fields": [
                             {
                                 "name": "Challenge Retries",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "3"
                             },
                             {
                                 "name": "Session State",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "None"
                             },
                             {
                                 "name": "Session Timeout",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "60"
                             },
                             {
                                 "name": "Session Max Timeout",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "480"
                             },
                             {
                                 "name": "Allow Password Changes",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Password Management System",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Enable 'Remember My Username'",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Enable 'This is My Device'",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Change Password Email Notification",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Show Password Expiring Warning",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Password Reset Type",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "NONE"
                             },
                             {
                                 "name": "Password Reset Policy Contract",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Account Unlock",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Local Identity Profile",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Notification Publisher",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Enable Username Recovery",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Login Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "html.form.login.template.html"
                             },
                             {
                                 "name": "Logout Path",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Logout Redirect",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Logout Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "idp.logout.success.page.template.html"
                             },
                             {
                                 "name": "Change Password Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "html.form.change.password.template.html"
                             },
                             {
                                 "name": "Change Password Message Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "html.form.message.template.html"
                             },
                             {
                                 "name": "Password Management System Message Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "html.form.message.template.html"
                             },
                             {
                                 "name": "Change Password Email Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "message-template-end-user-password-change.html"
                             },
                             {
                                 "name": "Expiring Password Warning Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "html.form.password.expiring.notification.template.html"
                             },
                             {
                                 "name": "Threshold for Expiring Password Warning",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "7"
                             },
                             {
                                 "name": "Snooze Interval for Expiring Password Warning",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "24"
                             },
                             {
                                 "name": "Login Challenge Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "html.form.login.challenge.template.html"
                             },
                             {
                                 "name": "'Remember My Username' Lifetime",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "30"
                             },
                             {
                                 "name": "'This is My Device' Lifetime",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "30"
                             },
                             {
                                 "name": "Allow Username Edits During Chaining",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Track Authentication Time",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "true"
                             },
                             {
                                 "name": "Post-Password Change Re-Authentication Delay",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "0"
                             },
                             {
                                 "name": "Password Reset Username Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "forgot-password.html"
                             },
                             {
                                 "name": "Password Reset Code Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "forgot-password-resume.html"
                             },
                             {
                                 "name": "Password Reset Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "forgot-password-change.html"
                             },
                             {
                                 "name": "Password Reset Error Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "forgot-password-error.html"
                             },
                             {
                                 "name": "Password Reset Success Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "forgot-password-success.html"
                             },
                             {
                                 "name": "Account Unlock Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "account-unlock.html"
                             },
                             {
                                 "name": "OTP Length",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "8"
                             },
                             {
                                 "name": "OTP Time to Live",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "10"
                             },
                             {
                                 "name": "PingID Properties",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_PingID_Properties_value}"
                             },
                             {
                                 "name": "Require Verified Email",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Username Recovery Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "username.recovery.template.html"
                             },
                             {
                                 "name": "Username Recovery Info Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "username.recovery.info.template.html"
                             },
                             {
                                 "name": "Username Recovery Email Template",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "message-template-username-recovery.html"
                             },
                             {
                                 "name": "CAPTCHA for Authentication",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "CAPTCHA for Password change",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "CAPTCHA for Password Reset",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "CAPTCHA for Username recovery",
-                                "value": "${idp_adapters_items_htmlFormAdapter_configuration_fields_value}"
+                                "value": "false"
                             }
                         ]
                     },
@@ -625,19 +618,19 @@
                         "attributeContractFulfillment": {
                             "org.sourceid.saml20.adapter.idp.authn.authnCtx": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidAdapter_attributeMapping_attributeContractFulfillment_org.sourceid.saml20.adapter.idp.authn.authnCtx_value}"
+                                "value": "org.sourceid.saml20.adapter.idp.authn.authnCtx"
                             },
                             "pingid_state": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidAdapter_attributeMapping_attributeContractFulfillment_pingid_state_value}"
+                                "value": "pingid_state"
                             },
                             "pingid.policy.action": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidAdapter_attributeMapping_attributeContractFulfillment_pingid.policy.action_value}"
+                                "value": "pingid.policy.action"
                             },
                             "subject": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidAdapter_attributeMapping_attributeContractFulfillment_subject_value}"
+                                "value": "subject"
                             }
                         },
                         "attributeSources": [],
@@ -648,111 +641,111 @@
                         "fields": [
                             {
                                 "name": "PingID Properties",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_PingID_Properties_value}"
                             },
                             {
                                 "name": "LDAP Data source",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Query Directory",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Base Domain",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Filter",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "LDAP Search Scope",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "3"
                             },
                             {
                                 "name": "fname attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "lname attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "email attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "group attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "phone attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "YubiKey attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Secondary email attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Voice number attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "State attribute",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "PingID Heartbeat Timeout",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Authentication During Errors",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "REJECT"
                             },
                             {
                                 "name": "Users without a paired device",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "block"
                             },
                             {
                                 "name": "LDAP Data Source For Devices",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Create entry for devices",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Encryption Key For Devices",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "Distinguished Name Pattern",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "HTML Template",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "pingid.offline.auth.login.template.html"
                             },
                             {
                                 "name": "Cookie Duration",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "1"
                             },
                             {
                                 "name": "PingID Properties File Name",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "pingid.properties.1"
                             },
                             {
                                 "name": "Refresh UserId Cookie",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "false"
                             },
                             {
                                 "name": "Require PingID Registration",
-                                "value": "${idp_adapters_items_pingidAdapter_configuration_fields_value}"
+                                "value": "false"
                             }
                         ]
                     },
@@ -794,27 +787,27 @@
                         "attributeContractFulfillment": {
                             "pingid.sdk.status": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidSDKAdapter_attributeMapping_attributeContractFulfillment_pingid.sdk.status_value}"
+                                "value": "pingid.sdk.status"
                             },
                             "policy.action": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidSDKAdapter_attributeMapping_attributeContractFulfillment_policy.action_value}"
+                                "value": "policy.action"
                             },
                             "authenticating.device.rooted": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidSDKAdapter_attributeMapping_attributeContractFulfillment_authenticating.device.rooted_value}"
+                                "value": "authenticating.device.rooted"
                             },
                             "pingid.sdk.status.reason": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidSDKAdapter_attributeMapping_attributeContractFulfillment_pingid.sdk.status.reason_value}"
+                                "value": "pingid.sdk.status.reason"
                             },
                             "accessing.device.rooted": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidSDKAdapter_attributeMapping_attributeContractFulfillment_accessing.device.rooted_value}"
+                                "value": "accessing.device.rooted"
                             },
                             "username": {
                                 "source": {"type": "ADAPTER"},
-                                "value": "${idp_adapters_items_pingidSDKAdapter_attributeMapping_attributeContractFulfillment_username_value}"
+                                "value": "username"
                             }
                         },
                         "attributeSources": [],
@@ -829,71 +822,71 @@
                             },
                             {
                                 "name": "Application ID",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "35b8cfed-b8d6-45bd-bad4-ed41aa814364"
                             },
                             {
                                 "name": "Device Pairing",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "automatic"
                             },
                             {
                                 "name": "Unpaired Users - Manual Pairing",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "bypass"
                             },
                             {
                                 "name": "Unpaired Users - Web Login",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "bypass"
                             },
                             {
                                 "name": "Additional Trusted Devices",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "network"
                             },
                             {
                                 "name": "MFA timeout",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "User Verification",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "bypass"
                             },
                             {
                                 "name": "Authentication During Errors",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "bypass"
                             },
                             {
                                 "name": "Heartbeat Timeout",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": ""
                             },
                             {
                                 "name": "HTML Template",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "pingid.sdk.login.template.html"
                             },
                             {
                                 "name": "Messages File",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "pingid-sdk-messages"
                             },
                             {
                                 "name": "Change Device",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "display"
                             },
                             {
                                 "name": "Success Screens",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "display"
                             },
                             {
                                 "name": "Error Screens",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "display"
                             },
                             {
                                 "name": "Timeout Screens",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "display"
                             },
                             {
                                 "name": "QR code based authentication",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "disabled"
                             },
                             {
                                 "name": "ROOTED/JAILBROKEN DEVICE",
-                                "value": "${idp_adapters_items_pingidSDKAdapter_configuration_fields_value}"
+                                "value": "bypass"
                             }
                         ]
                     },
@@ -990,7 +983,7 @@
                             "restrictedVirtualEntityIds": [],
                             "attributeContractFulfillment": {"SAML_SUBJECT": {
                                 "source": {"type": "AUTHENTICATION_POLICY_CONTRACT"},
-                                "value": "${idp_spConnections_items_A.0jBjASPY.yicdN6qS.k3GJ_4V_spBrowserSso_authenticationPolicyContractAssertionMappings_attributeContractFulfillment_SAML_SUBJECT_value}"
+                                "value": "subject"
                             }},
                             "restrictVirtualEntityIds": false,
                             "attributeSources": [],
@@ -1053,7 +1046,7 @@
                             },
                             "secondaryVerificationCert": false,
                             "x509File": {
-                                "fileData": "${idp_spConnections_items_sSbhg__zWv09_RNLYU3XRn3vpUr_credentials_certs_x509File_lfbkpf6c6535z5dyud6371air_fileData}",
+                                "fileData": "${idp_spConnections_items_sSbhg__zWv09_RNLYU3XRn3vpUr_credentials_certs_x509File_lfbkpf6c6535z5dyud6371air_lfbkpf6c6535z5dyud6371air_fileData}",
                                 "id": "lfbkpf6c6535z5dyud6371air"
                             },
                             "encryptionCert": true,
@@ -1083,7 +1076,7 @@
                             "restrictedVirtualEntityIds": [],
                             "attributeContractFulfillment": {"SAML_SUBJECT": {
                                 "source": {"type": "AUTHENTICATION_POLICY_CONTRACT"},
-                                "value": "${idp_spConnections_items_sSbhg__zWv09_RNLYU3XRn3vpUr_spBrowserSso_authenticationPolicyContractAssertionMappings_attributeContractFulfillment_SAML_SUBJECT_value}"
+                                "value": "subject"
                             }},
                             "restrictVirtualEntityIds": false,
                             "attributeSources": [],
@@ -1260,7 +1253,7 @@
                 "refreshRolling": "SERVER_DEFAULT",
                 "exclusiveScopes": [],
                 "clientAuth": {
-                    "secret": "${oauth_clients_items_clientAuth_secret}",
+                    "secret": "${oauth_clients_items_clientAuth_testclient_secret}",
                     "type": "SECRET",
                     "enforceReplayPrevention": false
                 },
@@ -1302,7 +1295,7 @@
                                             "id": "htmlFormAdapter",
                                             "type": "ADAPTER"
                                         },
-                                        "value": "${authenticationPolicies_default_items_authnSelectionTrees_rootNode_children_action_attributeMapping_attributeContractFulfillment_subject_value}"
+                                        "value": "username"
                                     }},
                                     "attributeSources": [],
                                     "issuanceCriteria": {"conditionalCriteria": []}

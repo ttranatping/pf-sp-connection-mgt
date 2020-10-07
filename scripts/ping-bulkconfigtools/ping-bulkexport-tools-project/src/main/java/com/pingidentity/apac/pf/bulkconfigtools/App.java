@@ -17,10 +17,10 @@ import org.json.JSONObject;
 
 public class App {
 
-	private final static String DEFAULT_IN_CONFIG = "in/pa-config.json";
-	private final static String DEFAULT_IN_BULKCONFIG = "in/pa-export.json";
-	private final static String DEFAULT_IN_ENVPROPERTIES = "in/out-pa-env.properties";
-	private final static String DEFAULT_IN_OUTCONFIG = "in/out-pa-bulk-config.json";
+	private final static String DEFAULT_IN_CONFIG = "in/pf-config-2.json";
+	private final static String DEFAULT_IN_BULKCONFIG = "in/pf-export-2.json";
+	private final static String DEFAULT_IN_ENVPROPERTIES = "in/out-pf-env.properties";
+	private final static String DEFAULT_IN_OUTCONFIG = "in/out-pf-bulk-config.json";
 
 	private final JSONObject inConfigJSON;
 	private final JSONArray inConfigExposeParametersArray;
@@ -253,6 +253,10 @@ public class App {
 					else
 						replaceValue = String.valueOf(jsonObject.get(parameterName));
 
+					if(parameterName.equals("fileData"))
+					{
+						int i = 0;
+					}
 					String currentIdentifier = getUniqueIdentifier(configJSON, jsonObject, parentObject);
 
 					if(currentIdentifier == null)
@@ -358,15 +362,15 @@ public class App {
 				else if(parentObject != null && parentObject.has(uid))
 					returnUidValue = String.valueOf(parentObject.get(uid));
 
-				if(returnUidValue != null && expectedUIDValue != null && returnUidValue.equals(expectedUIDValue))
+				if(returnUidValue != null && (expectedUIDValue != null && returnUidValue.equals(expectedUIDValue) || expectedUIDValue == null))
 					return returnUidValue;
 
 				if(returnUidValue == null)
-					return "";
+					return null;
 			}
 		}
 
-		return "";
+		return null;
 	}
 
 	private String getEscapedValue(String in)
