@@ -356,8 +356,11 @@ public class App {
 				else if(parentObject != null && parentObject.has(uid))
 					returnUidValue = String.valueOf(parentObject.get(uid));
 
-				if(returnUidValue != null && (expectedUIDValue == null || returnUidValue.equals(expectedUIDValue)))
+				if(returnUidValue != null && expectedUIDValue != null && returnUidValue.equals(expectedUIDValue))
 					return returnUidValue;
+
+				if(returnUidValue == null)
+					return "na";
 			}
 		}
 
