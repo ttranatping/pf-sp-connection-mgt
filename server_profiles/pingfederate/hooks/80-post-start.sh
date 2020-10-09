@@ -8,9 +8,6 @@
 # shellcheck source=../../../../pingcommon/opt/staging/hooks/pingcommon.lib.sh
 . "${HOOKS_DIR}/pingcommon.lib.sh"
 
-echo "INFO: Initiating connection management"
-${HOOKS_DIR}/initiate-connections.sh
-
 if test "${OPERATIONAL_MODE}" = "CLUSTERED_CONSOLE"  || test "${OPERATIONAL_MODE}" = "STANDALONE"
 then
     echo "INFO: waiting for PingFederate to start before importing configuration"
@@ -18,8 +15,8 @@ then
 
     ${HOOKS_DIR}/call-apis.sh
 
-#    echo "INFO: Initiating connection management"
-#    ${HOOKS_DIR}/initiate-connections.sh
+    echo "INFO: Initiating connection management"
+    ${HOOKS_DIR}/initiate-connections.sh
     
     if test "${OPERATIONAL_MODE}" = "CLUSTERED_CONSOLE"
     then
