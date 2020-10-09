@@ -31,11 +31,11 @@ then
     echo "INFO: Configuring engine node - Engine nodes should receive config from the cluster"
     wait-for 127.0.0.1:9031 -t 200 -- echo PingFederate Engine is up
     
-#    echo "INFO: Configuring engine node - Waiting for admin node to be up"
-#    wait-for pingfederate-admin:9999 -t 200 -- echo PingFederate Admin is up
+    echo "INFO: Configuring engine node - Waiting for admin node to be up"
+    wait-for pingfederate-admin:9999 -t 200 -- echo PingFederate Admin is up
 
-#    echo "INFO: Initiating connection management"
-#    ${HOOKS_DIR}/initiate-connections.sh
+    echo "INFO: Initiating connection management"
+    ${HOOKS_DIR}/initiate-connections.sh
 fi
 
 echo "Bringing eth0 back up..."
