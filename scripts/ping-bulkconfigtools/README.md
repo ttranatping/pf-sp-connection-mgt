@@ -140,7 +140,7 @@ Example: you may wish to add an SP connection
 - Navigates through the JSON and exchanges values for substitions.
 - Exposed substition names will be automatically created based on the json path.
     - E.g. ${oauth_clients_items_clientAuth_testclient_secret}
-- Can convert encryptedValues into clear text inputs (e.g. encryptedValue to value) prior to substituting it.
+- Can convert encrypted/obfuscated values into clear text inputs (e.g. "encryptedValue" to "value") prior to substituting it. This allows us to inject values in its raw form.
 
 Example: replace the "encryptedPassword" member with a substitution enabled "password" member for any elements with "id" or "username" members. The following will remove "encryptedPassword" and create "password": "${...}".
 ```
