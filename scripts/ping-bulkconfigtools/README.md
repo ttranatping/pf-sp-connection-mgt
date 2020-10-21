@@ -46,7 +46,14 @@ The bulk configuration consumes a configuration file to help identify informatio
 - add configuration
 - expose parameters as substitutions
 
-### search-replace
+### Examples
+- [pa-config.json](in/pa-config.json)
+- [pa-config-addconfigquery.json](in/pa-config-addconfigquery.json)
+- [pf-config.json](in/pf-config.json)
+
+### Commands
+
+#### search-replace
 - A simple utility to search and replace string values in a bulk config json file.
 - Can expose environmental variables.
 
@@ -60,7 +67,7 @@ Example: replacing an expected base hostname with a substition.
     }
   ]
 ```
-### change-value
+#### change-value
 - Searches for elements with a matching identifier, and updates a parameter with a new value.
 
 Example: update keyPairId against an element with name=ENGINE.
@@ -78,7 +85,7 @@ Example: update keyPairId against an element with name=ENGINE.
   ]
 ```
 
-### remove-config
+#### remove-config
 - Allows us to remove configuration from the bulk export.
 
 Example: you may wish to remove the ProvisionerDS data store:
@@ -101,7 +108,7 @@ Example: you may wish to remove all SP Connections:
   ]
 ```
 
-### add-config
+#### add-config
 - Allows us to add configuration to the bulk export.
 
 Example: you may wish to add the CONFIG QUERY http listener in PingAccess
@@ -136,7 +143,7 @@ Example: you may wish to add an SP connection
   ]
 ```
 
-### expose-parameters
+#### expose-parameters
 - Navigates through the JSON and exchanges values for substitions.
 - Exposed substition names will be automatically created based on the json path.
     - E.g. ${oauth_clients_items_clientAuth_testclient_secret}
@@ -154,7 +161,7 @@ Example: replace the "encryptedPassword" member with a substitution enabled "pas
     }
 ```
 
-### config-aliases
+#### config-aliases
 - The bulk config tool generates substitution names, however sometimes you wish to simplify them or reuse existing environment variables.
 
 Example: Renaming the Administrator's substitution name to leverage the common PING_IDENTITY_PASSWORD environmental variable.
