@@ -215,7 +215,7 @@ Commit the following files into the correct locations of your server profile:
 
 ### Old hivemodule.xml
 
-If you see something like this...
+If you see something like this when importing config via bulk API...
 
 ```
 2020-10-19 13:55:01,191  INFO  [org.sourceid.saml20.domain.mgmt.impl.DataDeployer] Deploying: /opt/out/instance/server/default/conf/data-default.zip
