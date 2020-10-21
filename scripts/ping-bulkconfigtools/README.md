@@ -34,46 +34,175 @@ The bulk export utility comes in pre-compiled source code. To build the project,
       - PATH=$PATH:$MAVEN_HOME/bin
     - https://maven.apache.org/
 
-You'll also need the CDR Sandbox running on your local machine.
-  - If you have changed the default settings (e.g. hostnames) you'll need to configure the configuration json files [pa-config.json](./ping-bulkexport-tools-project/in/pa-config.json), [pa-admin-config.json](./ping-bulkexport-tools-project/in/pa-admin-config.json), and [pf-config.json](./ping-bulkexport-tools-project/in/pf-config.json).
+You'll also need a running instance of PingFederate and/or PingAccess.
+  - If you have changed the default settings (e.g. hostnames) you'll need to configure the configuration json files [pa-config.json](./in/pa-config.json), [pa-admin-config.json](./in/pa-config-addconfigquery.json), and [pf-config.json](./in/pf-config.json).
+
+## A little bit about the input configuration
+
+The bulk configuration consumes a configuration file to help identify information it needs to extract and manipulate. It provides configuration to:
+- search and replace
+- change element values
+- remove configuration
+- add configuration
+- expose parameters as substitutions
+
+### search-replace
+- A simple utility to search and replace string values in a bulk config json file.
+- Can expose environmental variables.
+
+Example: replacing an expected base hostname with a substition.
+```
+  "search-replace":[
+    {
+      "search": "data-holder.local",
+      "replace": "${BASE_HOSTNAME}",
+      "apply-env-file": false
+    }
+  ]
+```
+### change-value
+- Searches for elements with a matching identifier, and updates a parameter with a new value.
+
+Example: update keyPairId against an element with name=ENGINE.
+```
+  "change-value":[
+  	{
+          "matching-identifier": 
+          {
+          	"id-name": "name",
+          	"id-value": "ENGINE"
+          },
+  	  "parameter-name": "keyPairId",
+  	  "new-value": 8
+  	}
+  ]
+```
+
+### remove-config
+- Allows us to remove configuration from the bulk export.
+
+Example: you may wish to remove the ProvisionerDS data store:
+```
+  "remove-config":[
+  	{
+  	  "key": "id",
+	  "value": "ProvisionerDS"
+  	}
+  ]
+```
+
+Example: you may wish to remove all SP Connections:
+```
+  "remove-config":[
+  	{
+  	  "key": "resourceType",
+	  "value": "/idp/spConnections"
+  	}
+  ]
+```
+
+### add-config
+- Allows us to add configuration to the bulk export.
+
+Example: you may wish to add the CONFIG QUERY http listener in PingAccess
+```
+  "add-config":[
+	  {
+	    "resourceType": "httpsListeners",
+	    "item":
+			{
+			    "id": 4,
+			    "name": "CONFIG QUERY",
+			    "keyPairId": 5,
+			    "useServerCipherSuiteOrder": true,
+			    "restartRequired": false
+			}
+	  }
+  ]
+```
+
+Example: you may wish to add an SP connection
+```
+  "add-config":[
+	  {
+	    "resourceType": "/idp/spConnections",
+	    "item":
+		{
+                    "name": "httpbin3.org",
+                    "active": false,
+		    ...
+		}
+	  }
+  ]
+```
+
+### expose-parameters
+- Navigates through the JSON and exchanges values for substitions.
+- Exposed substition names will be automatically created based on the json path.
+    - E.g. ${oauth_clients_items_clientAuth_testclient_secret}
+- Can convert encryptedValues into clear text inputs (e.g. encryptedValue to value) prior to substituting it.
+
+Example: replace the "encryptedPassword" member with a substitution enabled "password" member for any elements with "id" or "username" members. The following will remove "encryptedPassword" and create "password": "${...}".
+```
+    {
+      "parameter-name": "encryptedPassword",
+      "replace-name": "password",
+      "unique-identifiers": [
+          "id",
+          "username"
+      ]
+    }
+```
+
+### config-aliases
+- The bulk config tool generates substitution names, however sometimes you wish to simplify them or reuse existing environment variables.
+
+Example: Renaming the Administrator's substitution name to leverage the common PING_IDENTITY_PASSWORD environmental variable.
+```
+  "config-aliases":[
+	{
+	  "config-names":[
+	    "administrativeAccounts_items_Administrator_password"
+	  ],
+  	  "replace-name": "PING_IDENTITY_PASSWORD",
+  	  "is-apply-envfile": false
+  	}
+  ]
+```
 
 ## Run the export utility.
 
-1. In terminal, navigate to the scripts/ping-bulkconfigtools folder.
+1. In terminal, navigate to the ping-bulkconfigtools folder.
 2. Compile the tool if you haven't already done so.
     - cmd: ./_compile_bulkexporttool.sh
+3. Edit env.properties and configure details for PA and/or PF.
 3. Export PingAccess configuration
     - cmd: ./_pa_export-config.sh
-    - GETs configuration from: https://localhost:9000/pa-admin-api/v3/config/export
+    - GETs configuration from: {{PINGACCESS_ADMIN_BASEURL}}/pa-admin-api/v3/config/export
     - This will then create 2 exports: 
-        1) server_profiles/pingaccess/instance/data/start-up-deployer/data.json.subst
-        2) server_profiles/pingaccess-admin/instance/data/start-up-deployer/data.json.subst (contains CONFIG QUERY http listener).
+        1) ./out/pingaccess/standalone/data.json.subst
+        2) ./out/pingaccess/clustered/data.json.subst (contains CONFIG QUERY http listener).
     - Creates/maintains the following environment variable files:
-      - docker-compose/pa.env
-      - k8/02-completeinstall/pa.env
+      - ./out/pingaccess/pa.env
 4. Export PingFederate configuration
     - cmd: ./_pf_export-config.sh
-    - GETs configuration from: https://localhost:9999/pf-admin-api/v1/bulk/export
+    - GETs configuration from: {{PINGFEDERATE_ADMIN_BASEURL}}/pf-admin-api/v1/bulk/export
     - This will then create the following: 
-        1) server_profiles/pingfederate/instance/import-bulkconfig.json.subst
+        1) ./out/pingfederate/import-bulkconfig.json.subst
     - Creates/maintains the following environment variable files:
-      - docker-compose/pf.env
-      - k8/02-completeinstall/pf.env
+      - ./out/pingfederate/pf.env
 
 ## Configure and commit
 
-You'll need to configure the following environment variable files. The export process will maintain values inside these files that have been previously set however, new parameters may be present so you should look out for them.
-- docker-compose/pa.env
-- docker-compose/pf.env
-- k8/02-completeinstall/pa.env
-- k8/02-completeinstall/pf.env
+You'll need to configure the following environment variable files when deploying. The export process will maintain values inside these files that have been previously set however, new parameters may be present so you should look out for them.
+- ./out/pingaccess/pa.env
+- ./out/pingfederate/pf.env
 
 You do not need to commit the environment variables. You should consider excluding these files from being committed as they may contain sensitive information such as certificate keys and passwords.
 
-Commit the following files to update the configuration:
-- server_profiles/pingaccess/instance/data/start-up-deployer/data.json.subst
-- server_profiles/pingaccess-admin/instance/data/start-up-deployer/data.json.subst
-- server_profiles/pingfederate/instance/import-bulkconfig.json.subst
+Commit the following files into the correct locations of your server profile:
+- ./out/pingaccess/data.json.subst
+- ./out/pingfederate/import-bulkconfig.json.subst
 
 ## Known Issues
 
